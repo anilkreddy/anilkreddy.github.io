@@ -521,7 +521,7 @@ body.dark-body {
 
 .home-text h1 {
   font-size: 60px;
-  font-weight: 700;
+  font-weight: 500;
   position: relative;
   z-index: 1;
   display: inline-block;
@@ -1027,6 +1027,8 @@ body.dark-body {
 .testimonial-col .say {
     position: relative;
     padding: 20px;
+    height: 200px;
+    overflow-y: auto;
 }
 .testimonial-col .say p {
   font-size: 14px;
@@ -1059,7 +1061,7 @@ padding: 20px;
   line-height: normal;
 }
 .testimonial-col .user .name label {
-  opacity: 0.1;
+  opacity: 1;
   margin: 0;
   font-size: 12px;
   display: block;

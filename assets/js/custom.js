@@ -1,22 +1,21 @@
 /*========================================================================
-EXCLUSIVE ON themeforest.net
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Template Name   : Alexio
-Author          : PxDraft
+Author          : Anil
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Copyright (c) 2018 - PxDraft
+Copyright (c) 2019 - Anil
 ========================================================================*/
-  
+
 
 (function($){
     "use strict"
-    var ALX = {};
+    var ANIL = {};
 
     /*--------------------
       * Pre Load
     ----------------------*/
-    ALX.WebLoad = function(){
-      document.getElementById("loading").style.display = "none"; 
+    ANIL.WebLoad = function(){
+      document.getElementById("loading").style.display = "none";
     }
 
 
@@ -24,7 +23,7 @@ Copyright (c) 2018 - PxDraft
     * owl Slider
     ----------------------*/
 
-    ALX.ClientSlider = function(){
+    ANIL.ClientSlider = function(){
       var testimonials_slider = $('#client-slider-single');
         testimonials_slider.owlCarousel({
             loop: true,
@@ -52,7 +51,7 @@ Copyright (c) 2018 - PxDraft
     /*--------------------
     * owl Slider
     ----------------------*/
-    ALX.BlogSlider = function(){
+    ANIL.BlogSlider = function(){
       var testimonials_slider = $('#portfolio-slider-single');
         testimonials_slider.owlCarousel({
             loop: true,
@@ -79,7 +78,7 @@ Copyright (c) 2018 - PxDraft
     /*--------------------
     * Isotope
     ----------------------*/
-    ALX.MasoNry = function () {
+    ANIL.MasoNry = function () {
       var portfolioWork = $('.portfolio-content');
         $(portfolioWork).isotope({
             resizable: false,
@@ -101,7 +100,7 @@ Copyright (c) 2018 - PxDraft
     }
 
 
-    ALX.PopupVideo = function(){
+    ANIL.PopupVideo = function(){
       $('.popup-video').magnificPopup({
               disableOn: 700,
               type: 'iframe',
@@ -112,7 +111,7 @@ Copyright (c) 2018 - PxDraft
         });
     }
 
-    ALX.LightboxGallery = function(){
+    ANIL.LightboxGallery = function(){
       $('.portfolio-col').magnificPopup({
           delegate: '.lightbox-gallery',
           type: 'image',
@@ -128,7 +127,7 @@ Copyright (c) 2018 - PxDraft
       });
     }
 
-     ALX.mTypeIt = function() {
+     ANIL.mTypeIt = function() {
          new TypeIt('#type-it', {
              speed: 200,
              loop:true,
@@ -136,26 +135,54 @@ Copyright (c) 2018 - PxDraft
                  'Web Designer',
                  'Web Developer',
                  'Photographer',
-                 'Rider'
+                 'Bike Rider'
              ],
              breakLines: false
-         }).go()
+         });
     }
 
-    
+    ANIL.ContactForm = function() {
+        $('#contactform').submit(function (e) {
+            e.preventDefault();
+            var formData = $(this).serializeArray();
+            $.post('php/contact.php', formData)
+                .done(function(response) {
+                    if(response==='success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success',
+                            text: 'Thanks for contacting, I\'ll get back to you soon.'
+                        });
+                        $('#contactform')[0].reset();
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Something went wrong!'
+                        })
+                    }
+                })
+                .fail(function() {
+                    console.error('failed: check email form');
+                });
+        });
+    }
+
+
     // Window on Load
     $(window).on("load", function(){
-      ALX.MasoNry(),
-      ALX.WebLoad();
+      ANIL.MasoNry(),
+      ANIL.WebLoad();
     });
 
     $( document ).ready(function() {
-        ALX.ClientSlider(),
-        ALX.BlogSlider(),
-        ALX.MasoNry(),
-        ALX.PopupVideo(),
-        ALX.LightboxGallery(),
-        ALX.mTypeIt();
+        ANIL.ClientSlider(),
+        ANIL.BlogSlider(),
+        ANIL.MasoNry(),
+        ANIL.PopupVideo(),
+        ANIL.LightboxGallery(),
+        ANIL.mTypeIt(),
+        ANIL.ContactForm();
     });
 
 })(jQuery);
