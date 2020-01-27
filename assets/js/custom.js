@@ -129,7 +129,7 @@ Copyright (c) 2019 - Anil
 
      ANIL.mTypeIt = function() {
          new TypeIt('#type-it', {
-             speed: 200,
+             speed: 250,
              loop:true,
              strings: [
                  'Web Designer',

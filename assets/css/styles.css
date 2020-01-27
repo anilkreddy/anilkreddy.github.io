@@ -408,7 +408,7 @@ body.dark-body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 300px;
+  width: 370px;
   height: 60px;
   z-index: 9999;
 }
@@ -540,11 +540,10 @@ body.dark-body {
   opacity: 0.6;
 }
 .home-text p span {
-  text-transform: uppercase; 
+  text-transform: capitalize;
 }
 
 .home-text p {
-  text-transform: uppercase;  
   font-size: 18px;
   font-weight: 500;
   margin: 0;
