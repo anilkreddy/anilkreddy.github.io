@@ -36,7 +36,7 @@ jobs:
         script: |
           zip -r /home/anilkr/public_html/anil.zip /home/anilkr/public_html/.
           cp /home/anilkr/public_html/anil.zip /home/anilkr/repositories/backup/
-          rm -rf /home/anilkr/public_html/*
+          rm -rf /home/anilkr/public_html/{*,.*}
           cd /home/anilkr/repositories/anil.red
           git pull
           cp -r ./* /home/anilkr/public_html/.
