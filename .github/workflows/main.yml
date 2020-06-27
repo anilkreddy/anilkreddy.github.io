@@ -39,5 +39,5 @@ jobs:
           rm -rf /home/anilkr/public_html/*
           cd /home/anilkr/repositories/anil.red
           git pull
-          cp -r ./* /home/anilkr/public_html/.
+          cp -r . /home/anilkr/public_html/.
           
