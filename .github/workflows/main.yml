@@ -40,6 +40,6 @@ jobs:
           cd /home/anilkr/repositories/anil.red
           git pull
           cp -r ./* /home/anilkr/public_html/.
-          cp -r ./.htaccess /home/anilkr/public_html/.
+          cp .htaccess /home/anilkr/public_html/.
           
           
