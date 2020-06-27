@@ -33,4 +33,11 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         password: ${{ secrets.SSH_PASSWORD }}
         port: ${{ secrets.SSH_PORT }}
-        script: cd repositories/anil.red; git pull; cp -r ./* /home/anilkr/public_html/git/.;
+        script: |
+          zip -r anil.zip public_html/.
+          cp public_html/anil.zip /home/anilkr/repositories/backup/
+          rm -rf /home/anilkr/public_html/{*,.*}
+          cd repositories/anil.red
+          git pull
+          cp -r ./* /home/anilkr/public_html/git/.
+          
