@@ -48,7 +48,7 @@
     steps:
       - name: Hello world action step
         id: hello
-        uses: anilkreddy/sap-cc-sonar@v0.0.1
+        uses: anilkreddy/sap-cc-sonar@v0.1
         with:
           who-to-greet: 'Hello the monster'
       # Use the output from the `hello` step
