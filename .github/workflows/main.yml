@@ -41,13 +41,14 @@
          #  git pull
          #  cp -r ./* /home/anilkr/public_html/.
          #  cp .htaccess /home/anilkr/public_html/.
-   hello_world_job:
+   
+   sap_cc_sonar_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: SAP CC - Sonar 
     steps:
       - name: Hello world action step
         id: hello
-        uses: anilkreddy/hello-action@v1.2
+        uses: anilkreddy/sap-cc-sonar@v.0.0.1
         with:
           who-to-greet: 'Hello the monster'
       # Use the output from the `hello` step
