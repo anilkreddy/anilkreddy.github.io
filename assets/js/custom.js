@@ -169,7 +169,7 @@ Copyright (c) 2019 - Anil
     }
 
     ANIL.Experience = function() {
-        var experience = 6.5;
+        var experience = 8+;
         var start = "08/2014"
         var end =
         $('.exp').html(experience);
