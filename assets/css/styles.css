@@ -426,7 +426,7 @@ body.dark-body {
   top: 0;
   bottom: 0;
   right: 0;
-  background-color: #000;
+  background-color: #333132;
   height: 60px;
   width: 60px;
 }
@@ -568,7 +568,7 @@ body.dark-body {
 .home-banner .social-icons a {
   width: 35px;
   height: 35px;
-  background: #111;
+  background: #333132;
   display: block;
   text-align: center;
   line-height: 35px;
